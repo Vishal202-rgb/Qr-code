@@ -1,0 +1,235 @@
+:root{
+    --bg-color: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --primary: #00c6ff;
+    --secondary: #ffffff;
+    --glass-border: rgba(255,255,255,0.2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+    background-size: 600% 600%;
+    animation: gradientFlow 15s ease infinite;
+}
+
+/* 3D Glass Card */
+.box{
+    width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: perspective(1000px) rotateX(5deg);
+    transition: 0.4s ease;
+}
+
+.box:hover{
+    transform: perspective(1000px) rotateX(0deg) scale(1.02);
+}
+
+/* Heading */
+.qr-header h1{
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Input */
+.qr-header input{
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.qr-header input:focus{
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* Select */
+.qr-header select{
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Label row */
+.qr-header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Buttons */
+.qr-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.qr-footer a{
+    flex: 1;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    background: linear-gradient(145deg, #00c6ff, #0072ff);
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Button Hover Effect */
+.qr-footer a:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* QR Container */
+.qr-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* QR Image Styling */
+.qr-body img,
+.qr-body canvas{
+    padding: 10px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: pop 0.4s ease;
+}
+
+/* Animation */
+@keyframes pop{
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientFlow{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+
+.background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background span{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 20s infinite alternate ease-in-out;
+}
+
+/* Different colors + positions */
+.background span:nth-child(1){
+    top: 10%;
+    left: 20%;
+    background: #00c6ff;
+}
+
+.background span:nth-child(2){
+    top: 60%;
+    left: 70%;
+    background: #ff6ec4;
+}
+
+.background span:nth-child(3){
+    top: 80%;
+    left: 10%;
+    background: #42e695;
+}
+
+.background span:nth-child(4){
+    top: 30%;
+    left: 80%;
+    background: #ffd200;
+}
+
+/* Floating motion */
+@keyframes float{
+    0%{
+        transform: translateY(0) scale(1);
+    }
+    100%{
+        transform: translateY(-120px) scale(1.3);
+    }
+}
+/* Email & Phone Inputs */
+.qr-header input[type="email"],
+.qr-header input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+/* OTP Box */
+.otp-box{
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* OTP Input */
+.otp-box input{
+    flex: 1;
+}
+
+/* OTP Buttons */
+.otp-box button{
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #00c6ff, #0072ff);
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.otp-box button:hover{
+    transform: scale(1.05);
+}

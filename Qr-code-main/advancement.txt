@@ -1,0 +1,8 @@
+| Issue title                                             | Why it fits                                                                             |
+| ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Support Dynamic QR Codes with Editable Destination URLs | Extends the current URL/text QR feature into something more advanced and useful. github |
+| Add Scan Analytics Dashboard for Generated QR Codes     | Introduces business value by tracking usage, scans, devices, and time.                  |
+| Create Multi-Link QR Landing Page Support               | Lets one QR open a mini menu of links instead of a single target.                       |
+| Add Custom QR Styling with Logos, Colors, and Shapes    | Builds on the existing generator and improves branding options. github                  |
+| Implement Password-Protected QR Access                  | Adds a practical security layer for restricted content.                                 |
+| Build API Support for QR Generation                     | Helps turn the project from a small tool into a reusable platform.                      |
